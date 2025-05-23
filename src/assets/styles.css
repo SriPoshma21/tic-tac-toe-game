@@ -11,95 +11,206 @@
 }
 
 /* Category Selection */
-
-.category-selection {
-  margin-top: 50px;
-}
-
-.categories {
+.category-selection-wrapper {
   display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-top: 20px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.category-btn {
-  padding: 10px 25px;
+.title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.player-select {
+  display: flex;
+  gap: 50px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.player-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.player-label {
   font-size: 18px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.dropdown {
+  width: 200px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 2px solid #555;
+  background-color: #fff;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.dropdown:focus {
+  border-color: #1976d2;
+}
+
+.start-button {
+  margin-top: 20px;
+  padding: 12px 30px;
+  font-size: 18px;
+  background-color: #1976d2;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
   cursor: pointer;
-  border-radius: 8px;
-  border: 2px solid #333;
-  background-color: #f0f0f0;
   transition: background-color 0.3s ease;
 }
 
-.category-btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
+.start-button:hover {
+  background-color: #145ea8;
 }
 
-.category-btn:hover:not(:disabled) {
-  background-color: #cfcfcf;
-}
 
 /* GameBoard */
 
+/* General Container Styling */
 .game-container {
-  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.turn-text {
+  font-size: 20px;
+  font-weight: 500;
+  color: #444;
+  margin: 10px 0 30px;
+}
+
+/* Board Styling */
+/* src/assets/styles.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f8e1f4, #d1e8ff);
+  min-height: 100vh;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #4a148c;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in;
+}
+
+.turn-text,
+.winner-section h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 20px 0;
+}
+
+.play-again-btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #7b1fa2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.play-again-btn:hover {
+  background-color: #9c27b0;
+  transform: scale(1.05);
 }
 
 .board {
   display: grid;
-  grid-template-columns: repeat(3, 90px);
-  grid-template-rows: repeat(3, 90px);
-  gap: 10px;
-  justify-content: center;
+  grid-template-columns: repeat(3, 100px);
+  gap: 12px;
   margin-top: 20px;
 }
 
 .cell {
-  background-color: #eaeaea;
-  border-radius: 12px;
-  font-size: 50px;
+  width: 100px;
+  height: 100px;
+  background-color: #ffffffcc;
+  border: 3px solid #4a148c;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  border-radius: 12px;
   cursor: pointer;
-  user-select: none;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s, transform 0.2s;
+  position: relative;
 }
 
 .cell:hover {
-  background-color: #d4d4d4;
+  background-color: #f3e5f5;
+  transform: scale(1.03);
 }
 
-.turn-text {
-  font-weight: 600;
-  font-size: 20px;
-  margin-bottom: 15px;
+.emoji {
+  animation: popIn 0.3s ease forwards;
 }
 
-.winner-section {
-  color: green;
-  font-weight: 700;
-  margin-bottom: 20px;
+.vanish {
+  animation: vanishEffect 1s ease forwards;
 }
 
-.play-again-btn {
-  padding: 12px 28px;
-  font-weight: 700;
-  font-size: 16px;
-  border: none;
-  border-radius: 10px;
-  background-color: #f39c12;
-  cursor: pointer;
-  user-select: none;
+@keyframes popIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
-.play-again-btn:hover {
-  background-color: #d87e0a;
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
+
+
 /* Help components styles*/
 .help-overlay {
   position: fixed;

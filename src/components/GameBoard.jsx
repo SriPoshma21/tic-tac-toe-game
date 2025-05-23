@@ -1,4 +1,6 @@
+// src/components/GameBoard.jsx
 import React, { useState } from 'react';
+import '../assets/styles.css';
 
 const winningCombinations = [
   [0, 1, 2],
@@ -8,7 +10,7 @@ const winningCombinations = [
   [1, 4, 7],
   [2, 5, 8],
   [0, 4, 8],
-  [2, 4, 6]
+  [2, 4, 6],
 ];
 
 const GameBoard = ({ playerCategories }) => {
@@ -70,7 +72,7 @@ const GameBoard = ({ playerCategories }) => {
 
   return (
     <div className="game-container">
-      <h1>Emoji Tic Tac Toe</h1>
+      <h1>Tic Tac Toe</h1>
 
       {winner ? (
         <div className="winner-section">
@@ -81,16 +83,23 @@ const GameBoard = ({ playerCategories }) => {
         </div>
       ) : (
         <p className="turn-text">
-  Current Player: Player {currentPlayer} {' '}
-  {playerCategories[currentPlayer]?.[0] || ''}
-</p>
-
+         Player: Player {currentPlayer} {playerCategories[currentPlayer]?.[0] || ''}
+        </p>
       )}
 
       <div className="board">
         {board.map((cell, index) => (
-          <div key={index} className="cell" onClick={() => handleClick(index)}>
-            {cell}
+          <div
+            key={index}
+            className={`cell ${
+              moves[1].some((m) => m.index === index) ||
+              moves[2].some((m) => m.index === index)
+                ? 'vanish'
+                : ''
+            }`}
+            onClick={() => handleClick(index)}
+          >
+            {cell && <span className="emoji">{cell}</span>}
           </div>
         ))}
       </div>
