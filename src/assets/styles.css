@@ -1,0 +1,141 @@
+
+/* General */
+
+.app-container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  user-select: none;
+}
+
+/* Category Selection */
+
+.category-selection {
+  margin-top: 50px;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.category-btn {
+  padding: 10px 25px;
+  font-size: 18px;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 2px solid #333;
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
+}
+
+.category-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.category-btn:hover:not(:disabled) {
+  background-color: #cfcfcf;
+}
+
+/* GameBoard */
+
+.game-container {
+  margin-top: 30px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 90px);
+  grid-template-rows: repeat(3, 90px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.cell {
+  background-color: #eaeaea;
+  border-radius: 12px;
+  font-size: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+  background-color: #d4d4d4;
+}
+
+.turn-text {
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.winner-section {
+  color: green;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.play-again-btn {
+  padding: 12px 28px;
+  font-weight: 700;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: #f39c12;
+  cursor: pointer;
+  user-select: none;
+}
+
+.play-again-btn:hover {
+  background-color: #d87e0a;
+}
+/* Help components styles*/
+.help-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.help-modal {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  max-width: 400px;
+  text-align: left;
+}
+
+.help-modal h2 {
+  margin-top: 0;
+}
+
+.help-modal ul {
+  padding-left: 20px;
+}
+
+.close-help-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
