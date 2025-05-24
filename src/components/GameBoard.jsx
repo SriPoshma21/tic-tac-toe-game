@@ -1,6 +1,6 @@
 // src/components/GameBoard.jsx
 import React, { useState } from 'react';
-import '../assets/styles.css';
+import '../assets/GameBoard.css';
 
 const winningCombinations = [
   [0, 1, 2],
@@ -72,39 +72,48 @@ const GameBoard = ({ playerCategories }) => {
 
   return (
     <div className="game-container">
-      <h1>Tic Tac Toe</h1>
+  <h1>Player 1  vs Player 2 </h1>
 
-      {winner ? (
-        <div className="winner-section">
-          <h2>🎉 Player {winner} Wins!</h2>
-          <button className="play-again-btn" onClick={handleReset}>
-            Play Again
-          </button>
-        </div>
-      ) : (
-        <p className="turn-text">
-         Player: Player {currentPlayer} {playerCategories[currentPlayer]?.[0] || ''}
-        </p>
-      )}
-
-      <div className="board">
-        {board.map((cell, index) => (
-          <div
-            key={index}
-            className={`cell ${
-              moves[1].some((m) => m.index === index) ||
-              moves[2].some((m) => m.index === index)
-                ? 'vanish'
-                : ''
-            }`}
-            onClick={() => handleClick(index)}
-          >
-            {cell && <span className="emoji">{cell}</span>}
-          </div>
-        ))}
-      </div>
+  {winner ? (
+    <div className="winner-section">
+      <h2>🎉 Player {winner} Wins!</h2>
+      <button className="play-again-btn" onClick={handleReset}>
+        Play Again
+      </button>
     </div>
-  );
+  ) : (
+    <p className="turn-text">
+      Turn: <strong>Player {currentPlayer}</strong> {playerCategories[currentPlayer]?.[0] || ''}
+    </p>
+  )}
+
+  <div className="board">
+    {board.map((cell, index) => {
+      const isPlayer1 = moves[1].some((m) => m.index === index);
+      const isPlayer2 = moves[2].some((m) => m.index === index);
+      const cellClass = isPlayer1
+        ? 'cell player1'
+        : isPlayer2
+        ? 'cell player2'
+        : 'cell';
+
+      return (
+        <div
+          key={index}
+          className={`${cellClass} ${
+            isPlayer1 || isPlayer2 ? 'vanish' : ''
+          }`}
+          onClick={() => handleClick(index)}
+        >
+          {cell && <span className="emoji">{cell}</span>}
+        </div>
+      );
+    })}
+  </div>
+</div>
+
+  )
+
 };
 
 export default GameBoard;

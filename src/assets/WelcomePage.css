@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #fafafa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Welcome Container */
+.welcome-container {
+  text-align: center;
+  padding: 3rem;
+  background: linear-gradient(to right, #e0f7fa, #fff3e0);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  margin: 3rem auto;
+  max-width: 600px;
+  animation: fadeIn 1s ease;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.welcome-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.welcome-subtitle {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.start-btn,
+.help-btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.start-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+.start-btn:hover {
+  background-color: #388e3c;
+  transform: scale(1.05);
+}
+
+.help-btn {
+  background-color: #2196f3;
+  color: white;
+}
+
+.help-btn:hover {
+  background-color: #1565c0;
+  transform: scale(1.05);
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  text-align: left;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  font-family: 'Quicksand', sans-serif;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #444;
+}
+
+.modal-content ul {
+  margin: 1rem 0;
+  padding-left: 1.2rem;
+}
+
+.modal-content li {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #555;
+}
+
+.close-btn {
+  background-color: #f44336;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 8px;
+  float: right;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.close-btn:hover {
+  background-color: #c62828;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}

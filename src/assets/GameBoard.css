@@ -1,0 +1,108 @@
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #f8e1f4, #d1e8ff);
+  min-height: 100vh;
+}
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.cell.player1 {
+  background-color: #ffe0b2; /* Light orange */
+  border-color: #fb8c00;
+}
+
+.cell.player2 {
+  background-color: #c5cae9; /* Light blue-purple */
+  border-color: #3f51b5;
+}
+
+.turn-text {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+h1 {
+  color: #6a1b9a;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+.play-again-btn {
+  padding: 12px 24px;
+  font-size: 1rem;
+  background-color: #7b1fa2;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+.play-again-btn:hover {
+  background-color: #9c27b0;
+  transform: scale(1.05);
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background-color: #ffffffcc;
+  border: 3px solid #4a148c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  position: relative;
+}
+
+.cell:hover {
+  background-color: #f3e5f5;
+  transform: scale(1.03);
+}
+
+.emoji {
+  animation: popIn 0.3s ease forwards;
+}
+
+.vanish {
+  animation: vanishEffect 1s ease forwards;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,18 +1,23 @@
 import React, { useState } from 'react';
-import GameBoard from './components/GameBoard';
+import WelcomePage from './components/WelcomePage';
 import CategorySelection from './components/CategoriesSelection';
+import GameBoard from './components/GameBoard';
 import Help from './components/Help';
-import './assets/styles.css';
+// import './assets/styles.css';
 
 const categories = {
   Animals: ['🐶', '🐱', '🐵', '🐰'],
   Food: ['🍕', '🍟', '🍔', '🍩'],
   Sports: ['⚽️', '🏀', '🏈', '🎾'],
+  Nature: ['🌲', '🌸', '🌞', '🌧️'],
+  Faces: ['😀', '😎', '😭', '😡'],
+  Vehicles: ['🚗', '🚕', '🚓', '🚑'],
 };
 
 const App = () => {
+  const [showWelcome, setShowWelcome] = useState(true);
+  const [showHelp, setShowHelp] = useState(false);
   const [playerCategories, setPlayerCategories] = useState({});
-  const [showHelp, setShowHelp] = useState(true);
 
   const handleCategoriesSelected = (selected) => {
     setPlayerCategories({
@@ -25,9 +30,16 @@ const App = () => {
     <div className="app-container">
       {showHelp && <Help onClose={() => setShowHelp(false)} />}
 
-      {/* Show CategorySelection if categories are not yet selected */}
-      {!playerCategories[1] || !playerCategories[2] ? (
-        <CategorySelection onSelect={handleCategoriesSelected} selected={playerCategories} />
+      {showWelcome ? (
+        <WelcomePage
+          onStart={() => setShowWelcome(false)}
+          onHelp={() => setShowHelp(true)}
+        />
+      ) : !playerCategories[1] || !playerCategories[2] ? (
+        <CategorySelection
+          onSelect={handleCategoriesSelected}
+          categories={categories}
+        />
       ) : (
         <GameBoard playerCategories={playerCategories} />
       )}

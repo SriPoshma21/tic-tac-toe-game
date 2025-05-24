@@ -1,12 +1,11 @@
-
-// components/Help.jsx
 import React from 'react';
+import '../assets/Help.css';
 
 const Help = ({ onClose }) => {
   return (
     <div className="help-overlay">
       <div className="help-modal">
-        <h2>How to Play Emoji Tic Tac Toe</h2>
+        <h2>Start Blink Tic Tac Toe</h2>
         <ul>
           <li>🎮 Two players select different emoji categories.</li>
           <li>🔁 Take turns placing your emojis on the board.</li>

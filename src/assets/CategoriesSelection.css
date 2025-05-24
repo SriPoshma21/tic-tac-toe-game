@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+.category-selection-wrapper {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f0f8ff;
+  border-radius: 16px;
+  max-width: 700px;
+  margin: 2rem auto;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 1s ease;
+}
+
+.title {
+    font-family: 'Quicksand', sans-serif;
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.player-select {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.player-box {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  width: 280px;
+  transition: transform 0.3s ease;
+}
+
+.player-box:hover {
+  transform: translateY(-5px);
+}
+
+.player-label {
+  font-weight: bold;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.dropdown {
+  padding: 0.6rem 1rem;
+  font-size: 1.05rem;
+  border: 2px solid #4CAF50;
+  border-radius: 10px;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  background-color: #fefefe;
+  width: 100%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.dropdown:hover {
+  border-color: #388e3c;
+  background-color: #f1fff0;
+}
+
+.start-button {
+  margin-top: 2rem;
+  padding: 0.9rem 2.5rem;
+  font-size: 1.3rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: transform 0.3s, background-color 0.3s;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.start-button:hover {
+  transform: scale(1.1);
+  background-color: #388e3c;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
