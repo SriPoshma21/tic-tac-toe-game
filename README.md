@@ -1,12 +1,31 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ Emoji Tic Tac Toe (Blink Edition)
+Emoji Tic Tac Toe is a fun and interactive two-player React game with a twist:
+Instead of just Xs and Os, players choose from emoji categories and play using emojis. But there's a catch — you can only have 3 emojis on the board at a time, and your oldest emoji vanishes when you place a fourth one. This "blink" mechanic adds a dynamic twist to classic Tic Tac Toe gameplay!
 
-Currently, two official plugins are available:
+🚀 Features
+🧠 Two-player mode with alternating turns.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+🎭 Custom emoji categories for each player.
 
-## Expanding the ESLint configuration
+🧊 Only 3 emojis allowed per player at a time (vanishing emoji logic).
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+❌ Cannot reuse a spot where your emoji just vanished.
+
+🏆 Real-time win detection (vertical, horizontal, diagonal).
+
+🧩 Easy-to-use interface and smooth animations.
+
+📱 Fully responsive for desktop and mobile.
+
+📘 Help modal with instructions.
+
+
+🛠️ Tech Stack Used
+Technology	Purpose
+React.js	Frontend library for building UI
+JavaScript (ES6+)	Game logic and interactivity
+HTML5 & CSS3	Structure and styling
+React Hooks	useState for managing state
+Emoji Unicode	Used emojis for game pieces
+
