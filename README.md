@@ -20,6 +20,10 @@ Instead of just Xs and Os, players choose from emoji categories and play using e
 
 📘 Help modal with instructions.
 
+Vanishing logic Implementation:
+
+In this version of Tic Tac Toe, each player can only have 3 emojis on the board at any time. When a player attempts to place a fourth emoji, their oldest emoji disappears from the board. This mechanic adds a strategic twist, requiring players to think ahead like in chess or Connect Four.
+
 
 🛠️ Tech Stack Used
 Technology	Purpose
