@@ -23,6 +23,7 @@ const CategoriesSelection = ({ onSelect }) => {
 
   const handleStart = () => {
     if (selectedCategories[1] && selectedCategories[2]) {
+      console.log("Game started with:", selectedCategories);
       onSelect(selectedCategories);
     }
   };
