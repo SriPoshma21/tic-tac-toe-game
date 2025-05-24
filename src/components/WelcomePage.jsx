@@ -22,13 +22,15 @@ const WelcomePage = ({ onStart }) => {
       {showRules && (
         <div className="modal-overlay" onClick={() => setShowRules(false)}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <h2>📜 Game Rules</h2>
-            <ul>
-              <li>2 Players must select **different emoji categories**.</li>
-              <li>Players take turns placing emojis on the board.</li>
-              <li>The first to align 3 emojis in a row (horizontal, vertical, or diagonal) wins.</li>
-              <li>Chosen emojis will disappear from the player's list after each move (vanishing rule).</li>
-            </ul>
+            <h2>How to Play Emoji Tic Tac Toe</h2>
+        <ul>
+          <li>🎮 Two players select different emoji categories.</li>
+          <li>🔁 Take turns placing your emojis on the board.</li>
+          <li>🧊 Only 3 emojis per player are allowed at a time.</li>
+          <li>💨 Your oldest emoji will disappear when placing a fourth one.</li>
+          <li>❌ You can't reuse the same spot where an emoji just vanished.</li>
+          <li>🏆 The first to align 3 emojis in a row (vertically, horizontally, or diagonally) wins!</li>
+        </ul>
             <button className="close-btn" onClick={() => setShowRules(false)}>
               Close
             </button>

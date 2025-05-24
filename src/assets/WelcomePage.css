@@ -111,6 +111,7 @@ body {
   margin-bottom: 0.5rem;
   font-size: 1rem;
   color: #555;
+  list-style-type: none;
 }
 
 .close-btn {

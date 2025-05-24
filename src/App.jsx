@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import WelcomePage from './components/WelcomePage';
 import CategorySelection from './components/CategoriesSelection';
 import GameBoard from './components/GameBoard';
-import Help from './components/Help';
-// import './assets/styles.css';
 
 const categories = {
   Animals: ['🐶', '🐱', '🐵', '🐰'],
@@ -28,8 +26,7 @@ const App = () => {
 
   return (
     <div className="app-container">
-      {showHelp && <Help onClose={() => setShowHelp(false)} />}
-
+      
       {showWelcome ? (
         <WelcomePage
           onStart={() => setShowWelcome(false)}
